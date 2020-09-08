@@ -1,0 +1,93 @@
+
+
+http://localhost:8888/
+http://localhost:8888/board?a=list&p=1
+http://localhost:8888/guestbook?a=list
+http://localhost:8888/user?a=login
+
+
+(M)odel(V)iew(C)ontroller
+
+(M)odel(T)emplate(View)
+
+파이썬 file new project
+
+django_practices
+	| ---- helloworld
+	| ---- emaillist
+	| ---- guestbook
+
+my site
+	| ---- guestbook
+	| ---- user
+	| ---- board
+	| ---- gallery
+
+
+(pycharm + django) project
+
+
+django_practices
+	| ---- .idea
+	| ---- venv
+	| ---- django_practices
+	| ---- manage.py
+
+
+
+리눅스에서
+#pip3 install django
+
+
+#django-admin startproject django_practices
+# cd django_practices
+
+[mysite db 만들기]
+1. # mysql -u root -p
+2.
+
+
+<장고 프로젝트 mysite 만들기>
+
+1. 파이참에서
+터미널 누른후 pip install django
+ pip install mysqlclient
+django-admin startproject django_practices
+
+2. 디렉토리정리
+manage.py를 드래그로 맨위 폴더로 옮긴다.
+
+나머지 py파일을 두번째 폴더로 올린후
+맨아래 django_practices폴더를 삭제한다.
+
+3.
+setting.py에서
+	'ENGINE': 'django.db.backends.mysql',
+        	'NAME': 'mysite',
+        	'USER': 'mysite',
+        	'PASSWORD': 'mysite',
+        	'HOST': '192.168.1.140',
+        	'PORT': 3307
+값 복사해서 붙여넣기
+
+4. 파이참 터미널에서
+python manage.py migrate
+
+
+5. 장고 프로젝트 관리자 계정 생성하기
+터미널에서
+python manage.py createsuperuser
+
+12. /assets/** URL을 /static/** 경로로 매핑(settings.py)
+   STATICFILES_DIRS = (
+       os.path.join(BASE_DIR, 'statics'),
+    )
+    STATIC_URL = '/assets/'
+
+
+11. 지금까지 작업 내용 확인하기
+1) 서버 시작하기
+   터미널에서
+   # python manage.py runserver 0.0.0.0:9999
+2) 브라우저에서
+  http://127.0.0.1:9999 로 접근
